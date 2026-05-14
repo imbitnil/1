@@ -445,33 +445,249 @@ const POSTS=[
    excerpt:"My honest accounting of the year &mdash; the good trades, the costly mistakes, the psychological patterns I noticed.",
    body:`<p>Every January I sit down and write an honest post-mortem of the previous year. This year I'm sharing it publicly because the lessons were hard-won.</p><h2>The Numbers</h2><p>2024 was a strong year for momentum strategies overall. But most gains came from four trades. The other 60-odd trades were roughly break-even.</p><h2>What Worked</h2><p>Holding winners longer. In 2023 I had a habit of taking profits at 2&ndash;3R. In 2024 I used a trailing stop instead. Two trades went to 8R and 11R respectively.</p><blockquote><p>The most important skill isn't finding good setups. It's knowing when the environment doesn't support your strategy &mdash; and doing nothing.</p></blockquote><h2>What I'm Changing in 2025</h2><p>I'm adding a formal &ldquo;market regime&rdquo; filter. Before I take any new positions, I'll check whether the number of stocks making 52-week highs is expanding or contracting. If contracting, I cut maximum positions by half.</p>`},
 
-  {id:"traders-equation",tag:"Risk Management",read:"7 min",date:"May 10, 2025",
+  {id:"traders-equation",tag:"Risk Management",read:"12 min",date:"May 10, 2025",
    title:"The Trader's Equation: Win Rate, Risk-Reward, and Expectancy",
    excerpt:"Your outcome in trading is not decided by win rate alone. Even a 10% win rate can be profitable — if your risk-reward is right.",
    body:`<p>Most traders obsess over win rate. They want to be right. But being right most of the time has nothing to do with being profitable. What actually determines your outcome is <strong>expectancy</strong> — the combination of win rate and risk-reward ratio over a series of trades.</p>
-
 <blockquote><p>Expectancy = (Win Rate &times; Avg Win) &minus; (Loss Rate &times; Avg Loss)</p></blockquote>
+<p>Assume 100 trades and 1 unit risk per trade. Here's the complete data across all win rates from 10% to 50%.</p>
 
-<p>To make this concrete, let's assume 100 trades and 1 unit of risk per trade. Here's what the math shows across different win rates.</p>
+<h2>Win Rate: 10% &mdash; Loss Rate: 90% &mdash; Breakeven at 1:9</h2>
+<p>10 wins, 90 losses. You need a 1:9 reward just to break even. At 1:10 you're already in profit.</p>
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Risk:Reward</span><span>Return (units)</span></div>
+  <div class="eq-row"><span>1:1</span><span>&minus;80</span></div>
+  <div class="eq-row"><span>1:2</span><span>&minus;70</span></div>
+  <div class="eq-row"><span>1:3</span><span>&minus;60</span></div>
+  <div class="eq-row"><span>1:4</span><span>&minus;50</span></div>
+  <div class="eq-row"><span>1:5</span><span>&minus;40</span></div>
+  <div class="eq-row"><span>1:6</span><span>&minus;30</span></div>
+  <div class="eq-row"><span>1:7</span><span>&minus;20</span></div>
+  <div class="eq-row"><span>1:8</span><span>&minus;10</span></div>
+  <div class="eq-row"><span>1:9</span><span>0 (breakeven)</span></div>
+  <div class="eq-row"><span>1:10</span><span>+10</span></div>
+  <div class="eq-row"><span>1:11</span><span>+20</span></div>
+  <div class="eq-row"><span>1:12</span><span>+30</span></div>
+  <div class="eq-row"><span>1:13</span><span>+40</span></div>
+  <div class="eq-row"><span>1:14</span><span>+50</span></div>
+  <div class="eq-row"><span>1:15</span><span>+60</span></div>
+  <div class="eq-row"><span>1:16</span><span>+70</span></div>
+  <div class="eq-row"><span>1:17</span><span>+80</span></div>
+  <div class="eq-row"><span>1:18</span><span>+90</span></div>
+  <div class="eq-row"><span>1:19</span><span>+100</span></div>
+  <div class="eq-row"><span>1:20</span><span>+110</span></div>
+</div>
 
-<h2>Win Rate: 10% &mdash; Breakeven at 1:9</h2>
-<p>With only 10 winners out of 100 trades and 90 losses, you need a risk-reward of at least <strong>1:9</strong> to break even. At 1:10 you're already +10 units. At 1:20, +110 units. Low probability, but high payoff — the sniper approach.</p>
+<h2>Win Rate: 15% &mdash; Loss Rate: 85% &mdash; Breakeven at ~1:5.67</h2>
+<p>15 wins, 85 losses. Breakeven around 1:5.67 — at 1:6 you're already in the green.</p>
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Risk:Reward</span><span>Return (units)</span></div>
+  <div class="eq-row"><span>1:1</span><span>&minus;70</span></div>
+  <div class="eq-row"><span>1:2</span><span>&minus;55</span></div>
+  <div class="eq-row"><span>1:3</span><span>&minus;40</span></div>
+  <div class="eq-row"><span>1:4</span><span>&minus;25</span></div>
+  <div class="eq-row"><span>1:5</span><span>&minus;10</span></div>
+  <div class="eq-row"><span>1:6</span><span>+5</span></div>
+  <div class="eq-row"><span>1:7</span><span>+20</span></div>
+  <div class="eq-row"><span>1:8</span><span>+35</span></div>
+  <div class="eq-row"><span>1:9</span><span>+50</span></div>
+  <div class="eq-row"><span>1:10</span><span>+65</span></div>
+  <div class="eq-row"><span>1:11</span><span>+80</span></div>
+  <div class="eq-row"><span>1:12</span><span>+95</span></div>
+  <div class="eq-row"><span>1:13</span><span>+110</span></div>
+  <div class="eq-row"><span>1:14</span><span>+125</span></div>
+  <div class="eq-row"><span>1:15</span><span>+140</span></div>
+  <div class="eq-row"><span>1:16</span><span>+155</span></div>
+  <div class="eq-row"><span>1:17</span><span>+170</span></div>
+  <div class="eq-row"><span>1:18</span><span>+185</span></div>
+  <div class="eq-row"><span>1:19</span><span>+200</span></div>
+  <div class="eq-row"><span>1:20</span><span>+215</span></div>
+</div>
 
-<h2>Win Rate: 20% &mdash; Breakeven at 1:4</h2>
-<p>With 20 wins and 80 losses: 1:1 is &minus;60, 1:4 is breakeven at 0, and every additional unit of reward adds +20. At 1:10 you're at +120.</p>
+<h2>Win Rate: 20% &mdash; Loss Rate: 80% &mdash; Breakeven at 1:4</h2>
+<p>20 wins, 80 losses. A 1:4 reward exactly breaks even. Every +1 in reward after that adds +20 units.</p>
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Risk:Reward</span><span>Return (units)</span></div>
+  <div class="eq-row"><span>1:1</span><span>&minus;60</span></div>
+  <div class="eq-row"><span>1:2</span><span>&minus;40</span></div>
+  <div class="eq-row"><span>1:3</span><span>&minus;20</span></div>
+  <div class="eq-row"><span>1:4</span><span>0 (breakeven)</span></div>
+  <div class="eq-row"><span>1:5</span><span>+20</span></div>
+  <div class="eq-row"><span>1:6</span><span>+40</span></div>
+  <div class="eq-row"><span>1:7</span><span>+60</span></div>
+  <div class="eq-row"><span>1:8</span><span>+80</span></div>
+  <div class="eq-row"><span>1:9</span><span>+100</span></div>
+  <div class="eq-row"><span>1:10</span><span>+120</span></div>
+  <div class="eq-row"><span>1:11</span><span>+140</span></div>
+  <div class="eq-row"><span>1:12</span><span>+160</span></div>
+  <div class="eq-row"><span>1:13</span><span>+180</span></div>
+  <div class="eq-row"><span>1:14</span><span>+200</span></div>
+  <div class="eq-row"><span>1:15</span><span>+220</span></div>
+  <div class="eq-row"><span>1:16</span><span>+240</span></div>
+  <div class="eq-row"><span>1:17</span><span>+260</span></div>
+  <div class="eq-row"><span>1:18</span><span>+280</span></div>
+  <div class="eq-row"><span>1:19</span><span>+300</span></div>
+  <div class="eq-row"><span>1:20</span><span>+320</span></div>
+</div>
 
-<h2>Win Rate: 30% &mdash; Breakeven at ~1:2.33</h2>
-<p>30 wins, 70 losses: 1:1 gives &minus;40, 1:3 gives +20. At 1:10 you're at +230. Most momentum traders operate around this zone.</p>
+<h2>Win Rate: 25% &mdash; Loss Rate: 75% &mdash; Breakeven at 1:3</h2>
+<p>25 wins, 75 losses. Clean breakeven at exactly 1:3. Each extra reward unit adds +25.</p>
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Risk:Reward</span><span>Return (units)</span></div>
+  <div class="eq-row"><span>1:1</span><span>&minus;50</span></div>
+  <div class="eq-row"><span>1:2</span><span>&minus;25</span></div>
+  <div class="eq-row"><span>1:3</span><span>0 (breakeven)</span></div>
+  <div class="eq-row"><span>1:4</span><span>+25</span></div>
+  <div class="eq-row"><span>1:5</span><span>+50</span></div>
+  <div class="eq-row"><span>1:6</span><span>+75</span></div>
+  <div class="eq-row"><span>1:7</span><span>+100</span></div>
+  <div class="eq-row"><span>1:8</span><span>+125</span></div>
+  <div class="eq-row"><span>1:9</span><span>+150</span></div>
+  <div class="eq-row"><span>1:10</span><span>+175</span></div>
+  <div class="eq-row"><span>1:11</span><span>+200</span></div>
+  <div class="eq-row"><span>1:12</span><span>+225</span></div>
+  <div class="eq-row"><span>1:13</span><span>+250</span></div>
+  <div class="eq-row"><span>1:14</span><span>+275</span></div>
+  <div class="eq-row"><span>1:15</span><span>+300</span></div>
+  <div class="eq-row"><span>1:16</span><span>+325</span></div>
+  <div class="eq-row"><span>1:17</span><span>+350</span></div>
+  <div class="eq-row"><span>1:18</span><span>+375</span></div>
+  <div class="eq-row"><span>1:19</span><span>+400</span></div>
+  <div class="eq-row"><span>1:20</span><span>+425</span></div>
+</div>
 
-<h2>Win Rate: 40% &mdash; Breakeven at 1:1.5</h2>
-<p>40 wins, 60 losses: even a 1:2 reward gives you +20. At 1:10 you're at +340. This is where a good system with moderate selectivity lands.</p>
+<h2>Win Rate: 30% &mdash; Loss Rate: 70% &mdash; Breakeven at ~1:2.33</h2>
+<p>30 wins, 70 losses. Profitable from 1:3 onwards. Each extra reward unit adds +30.</p>
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Risk:Reward</span><span>Return (units)</span></div>
+  <div class="eq-row"><span>1:1</span><span>&minus;40</span></div>
+  <div class="eq-row"><span>1:2</span><span>&minus;10</span></div>
+  <div class="eq-row"><span>1:3</span><span>+20</span></div>
+  <div class="eq-row"><span>1:4</span><span>+50</span></div>
+  <div class="eq-row"><span>1:5</span><span>+80</span></div>
+  <div class="eq-row"><span>1:6</span><span>+110</span></div>
+  <div class="eq-row"><span>1:7</span><span>+140</span></div>
+  <div class="eq-row"><span>1:8</span><span>+170</span></div>
+  <div class="eq-row"><span>1:9</span><span>+200</span></div>
+  <div class="eq-row"><span>1:10</span><span>+230</span></div>
+  <div class="eq-row"><span>1:11</span><span>+260</span></div>
+  <div class="eq-row"><span>1:12</span><span>+290</span></div>
+  <div class="eq-row"><span>1:13</span><span>+320</span></div>
+  <div class="eq-row"><span>1:14</span><span>+350</span></div>
+  <div class="eq-row"><span>1:15</span><span>+380</span></div>
+  <div class="eq-row"><span>1:16</span><span>+410</span></div>
+  <div class="eq-row"><span>1:17</span><span>+440</span></div>
+  <div class="eq-row"><span>1:18</span><span>+470</span></div>
+  <div class="eq-row"><span>1:19</span><span>+500</span></div>
+  <div class="eq-row"><span>1:20</span><span>+530</span></div>
+</div>
 
-<h2>Win Rate: 50% &mdash; Breakeven at 1:1</h2>
-<p>50/50. If you win as often as you lose, even a 1:1 reward breaks even. Every incremental improvement in reward directly adds profit. At 1:10 you're at +450.</p>
+<h2>Win Rate: 35% &mdash; Loss Rate: 65% &mdash; Breakeven at ~1:1.86</h2>
+<p>35 wins, 65 losses. Already profitable at 1:2. Each extra reward unit adds +35.</p>
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Risk:Reward</span><span>Return (units)</span></div>
+  <div class="eq-row"><span>1:1</span><span>&minus;30</span></div>
+  <div class="eq-row"><span>1:2</span><span>+5</span></div>
+  <div class="eq-row"><span>1:3</span><span>+40</span></div>
+  <div class="eq-row"><span>1:4</span><span>+75</span></div>
+  <div class="eq-row"><span>1:5</span><span>+110</span></div>
+  <div class="eq-row"><span>1:6</span><span>+145</span></div>
+  <div class="eq-row"><span>1:7</span><span>+180</span></div>
+  <div class="eq-row"><span>1:8</span><span>+215</span></div>
+  <div class="eq-row"><span>1:9</span><span>+250</span></div>
+  <div class="eq-row"><span>1:10</span><span>+285</span></div>
+  <div class="eq-row"><span>1:11</span><span>+320</span></div>
+  <div class="eq-row"><span>1:12</span><span>+355</span></div>
+  <div class="eq-row"><span>1:13</span><span>+390</span></div>
+  <div class="eq-row"><span>1:14</span><span>+425</span></div>
+  <div class="eq-row"><span>1:15</span><span>+460</span></div>
+  <div class="eq-row"><span>1:16</span><span>+495</span></div>
+  <div class="eq-row"><span>1:17</span><span>+530</span></div>
+  <div class="eq-row"><span>1:18</span><span>+565</span></div>
+  <div class="eq-row"><span>1:19</span><span>+600</span></div>
+  <div class="eq-row"><span>1:20</span><span>+635</span></div>
+</div>
+
+<h2>Win Rate: 40% &mdash; Loss Rate: 60% &mdash; Breakeven at 1:1.5</h2>
+<p>40 wins, 60 losses. Profitable from 1:2 onwards with +20. Each extra reward unit adds +40.</p>
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Risk:Reward</span><span>Return (units)</span></div>
+  <div class="eq-row"><span>1:1</span><span>&minus;20</span></div>
+  <div class="eq-row"><span>1:2</span><span>+20</span></div>
+  <div class="eq-row"><span>1:3</span><span>+60</span></div>
+  <div class="eq-row"><span>1:4</span><span>+100</span></div>
+  <div class="eq-row"><span>1:5</span><span>+140</span></div>
+  <div class="eq-row"><span>1:6</span><span>+180</span></div>
+  <div class="eq-row"><span>1:7</span><span>+220</span></div>
+  <div class="eq-row"><span>1:8</span><span>+260</span></div>
+  <div class="eq-row"><span>1:9</span><span>+300</span></div>
+  <div class="eq-row"><span>1:10</span><span>+340</span></div>
+  <div class="eq-row"><span>1:11</span><span>+380</span></div>
+  <div class="eq-row"><span>1:12</span><span>+420</span></div>
+  <div class="eq-row"><span>1:13</span><span>+460</span></div>
+  <div class="eq-row"><span>1:14</span><span>+500</span></div>
+  <div class="eq-row"><span>1:15</span><span>+540</span></div>
+  <div class="eq-row"><span>1:16</span><span>+580</span></div>
+  <div class="eq-row"><span>1:17</span><span>+620</span></div>
+  <div class="eq-row"><span>1:18</span><span>+660</span></div>
+  <div class="eq-row"><span>1:19</span><span>+700</span></div>
+  <div class="eq-row"><span>1:20</span><span>+740</span></div>
+</div>
+
+<h2>Win Rate: 45% &mdash; Loss Rate: 55% &mdash; Breakeven at ~1:1.22</h2>
+<p>45 wins, 55 losses. Unprofitable only at 1:1. From 1:2 onwards: +35 and growing. Each reward unit adds +45.</p>
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Risk:Reward</span><span>Return (units)</span></div>
+  <div class="eq-row"><span>1:1</span><span>&minus;10</span></div>
+  <div class="eq-row"><span>1:2</span><span>+35</span></div>
+  <div class="eq-row"><span>1:3</span><span>+80</span></div>
+  <div class="eq-row"><span>1:4</span><span>+125</span></div>
+  <div class="eq-row"><span>1:5</span><span>+170</span></div>
+  <div class="eq-row"><span>1:6</span><span>+215</span></div>
+  <div class="eq-row"><span>1:7</span><span>+260</span></div>
+  <div class="eq-row"><span>1:8</span><span>+305</span></div>
+  <div class="eq-row"><span>1:9</span><span>+350</span></div>
+  <div class="eq-row"><span>1:10</span><span>+395</span></div>
+  <div class="eq-row"><span>1:11</span><span>+440</span></div>
+  <div class="eq-row"><span>1:12</span><span>+485</span></div>
+  <div class="eq-row"><span>1:13</span><span>+530</span></div>
+  <div class="eq-row"><span>1:14</span><span>+575</span></div>
+  <div class="eq-row"><span>1:15</span><span>+620</span></div>
+  <div class="eq-row"><span>1:16</span><span>+665</span></div>
+  <div class="eq-row"><span>1:17</span><span>+710</span></div>
+  <div class="eq-row"><span>1:18</span><span>+755</span></div>
+  <div class="eq-row"><span>1:19</span><span>+800</span></div>
+  <div class="eq-row"><span>1:20</span><span>+845</span></div>
+</div>
+
+<h2>Win Rate: 50% &mdash; Loss Rate: 50% &mdash; Breakeven at 1:1</h2>
+<p>50 wins, 50 losses. At 1:1 you break even. Every improvement in reward directly adds profit. Each reward unit adds +50.</p>
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Risk:Reward</span><span>Return (units)</span></div>
+  <div class="eq-row"><span>1:1</span><span>0 (breakeven)</span></div>
+  <div class="eq-row"><span>1:2</span><span>+50</span></div>
+  <div class="eq-row"><span>1:3</span><span>+100</span></div>
+  <div class="eq-row"><span>1:4</span><span>+150</span></div>
+  <div class="eq-row"><span>1:5</span><span>+200</span></div>
+  <div class="eq-row"><span>1:6</span><span>+250</span></div>
+  <div class="eq-row"><span>1:7</span><span>+300</span></div>
+  <div class="eq-row"><span>1:8</span><span>+350</span></div>
+  <div class="eq-row"><span>1:9</span><span>+400</span></div>
+  <div class="eq-row"><span>1:10</span><span>+450</span></div>
+  <div class="eq-row"><span>1:11</span><span>+500</span></div>
+  <div class="eq-row"><span>1:12</span><span>+550</span></div>
+  <div class="eq-row"><span>1:13</span><span>+600</span></div>
+  <div class="eq-row"><span>1:14</span><span>+650</span></div>
+  <div class="eq-row"><span>1:15</span><span>+700</span></div>
+  <div class="eq-row"><span>1:16</span><span>+750</span></div>
+  <div class="eq-row"><span>1:17</span><span>+800</span></div>
+  <div class="eq-row"><span>1:18</span><span>+850</span></div>
+  <div class="eq-row"><span>1:19</span><span>+900</span></div>
+  <div class="eq-row"><span>1:20</span><span>+950</span></div>
+</div>
 
 <h2>The Clean Pattern</h2>
-<p>Lower win rate requires bigger rewards to survive. Higher win rate gives you more flexibility on reward. The table below summarises the breakeven points:</p>
-
+<p>Lower win rate requires bigger rewards to survive. Higher win rate gives you flexibility on reward. Summary of breakeven points:</p>
 <div class="eq-table">
   <div class="eq-row eq-header"><span>Win Rate</span><span>Breakeven R:R</span></div>
   <div class="eq-row"><span>10%</span><span>1:9</span></div>
@@ -484,35 +700,107 @@ const POSTS=[
   <div class="eq-row"><span>45%</span><span>~1:1.22</span></div>
   <div class="eq-row"><span>50%</span><span>1:1</span></div>
 </div>
+<p>Once you understand this, you stop chasing a higher win rate and start managing your risk-reward. A 30% win rate with 1:3 reward produces the same result as a 50% win rate with 1:1 — except the 30% system is far easier to achieve in real markets.</p>`},
 
-<p>Once you understand this, you stop chasing a higher win rate and start managing your risk-reward. A 30% win rate with 1:3 reward is the same as a 50% win rate with 1:1 — except the 30% system is far easier to achieve in real markets.</p>`},
-
-  {id:"roc",tag:"Risk Management",read:"6 min",date:"May 3, 2025",
+  {id:"roc",tag:"Risk Management",read:"8 min",date:"May 3, 2025",
    title:"How to Calculate Return on Capital (ROC)",
    excerpt:"ROC shows what a trade actually does to your total account — not just the trade itself. Position size is the bridge.",
    body:`<p>When a stock moves 20%, that's not your return. That's the trade's return. Your actual return on capital depends on how much of your total account you deployed. This is Return on Capital (ROC) — and understanding it is central to sensible position sizing.</p>
-
-<blockquote><p>ROC = Position Size (as a fraction) &times; Trade Return (%)</p></blockquote>
-
+<blockquote><p>ROC = Position Size (fraction) &times; Trade Return (%)</p></blockquote>
 <p>A large loss in a trade only becomes a large loss in your account if your position size is large. The two levers are always: how much you deploy, and how much the trade moves.</p>
 
-<h2>Position Size: 5%</h2>
-<p>At 1/20th of your capital, every 10% move in the stock = 0.5% move in your account. A &minus;30% trade = &minus;1.5% ROC. A +30% trade = +1.5% ROC. Tight and controlled.</p>
+<h2>Position Size: 5% &mdash; ROC = 1/20 &times; Return</h2>
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Trade Return</span><span>ROC (Account Impact)</span></div>
+  <div class="eq-row"><span>&minus;30%</span><span>&minus;1.5%</span></div>
+  <div class="eq-row"><span>&minus;25%</span><span>&minus;1.25%</span></div>
+  <div class="eq-row"><span>&minus;20%</span><span>&minus;1.0%</span></div>
+  <div class="eq-row"><span>&minus;15%</span><span>&minus;0.75%</span></div>
+  <div class="eq-row"><span>&minus;10%</span><span>&minus;0.5%</span></div>
+  <div class="eq-row"><span>&minus;5%</span><span>&minus;0.25%</span></div>
+  <div class="eq-row"><span>0%</span><span>0%</span></div>
+  <div class="eq-row"><span>+5%</span><span>+0.25%</span></div>
+  <div class="eq-row"><span>+10%</span><span>+0.5%</span></div>
+  <div class="eq-row"><span>+15%</span><span>+0.75%</span></div>
+  <div class="eq-row"><span>+20%</span><span>+1.0%</span></div>
+  <div class="eq-row"><span>+25%</span><span>+1.25%</span></div>
+  <div class="eq-row"><span>+30%</span><span>+1.5%</span></div>
+</div>
 
-<h2>Position Size: 10%</h2>
-<p>Doubling to 1/10th doubles the impact. &minus;30% trade = &minus;3% ROC. +30% = +3% ROC. Still manageable, but you feel the winners and losers more.</p>
+<h2>Position Size: 10% &mdash; ROC = 1/10 &times; Return</h2>
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Trade Return</span><span>ROC (Account Impact)</span></div>
+  <div class="eq-row"><span>&minus;30%</span><span>&minus;3.0%</span></div>
+  <div class="eq-row"><span>&minus;25%</span><span>&minus;2.5%</span></div>
+  <div class="eq-row"><span>&minus;20%</span><span>&minus;2.0%</span></div>
+  <div class="eq-row"><span>&minus;15%</span><span>&minus;1.5%</span></div>
+  <div class="eq-row"><span>&minus;10%</span><span>&minus;1.0%</span></div>
+  <div class="eq-row"><span>&minus;5%</span><span>&minus;0.5%</span></div>
+  <div class="eq-row"><span>0%</span><span>0%</span></div>
+  <div class="eq-row"><span>+5%</span><span>+0.5%</span></div>
+  <div class="eq-row"><span>+10%</span><span>+1.0%</span></div>
+  <div class="eq-row"><span>+15%</span><span>+1.5%</span></div>
+  <div class="eq-row"><span>+20%</span><span>+2.0%</span></div>
+  <div class="eq-row"><span>+25%</span><span>+2.5%</span></div>
+  <div class="eq-row"><span>+30%</span><span>+3.0%</span></div>
+</div>
 
-<h2>Position Size: 20%</h2>
-<p>At 1/5th of capital: &minus;30% = &minus;6% ROC, +30% = +6% ROC. A concentrated position. Used by high-conviction traders with tight stops.</p>
+<h2>Position Size: 20% &mdash; ROC = 1/5 &times; Return</h2>
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Trade Return</span><span>ROC (Account Impact)</span></div>
+  <div class="eq-row"><span>&minus;30%</span><span>&minus;6.0%</span></div>
+  <div class="eq-row"><span>&minus;25%</span><span>&minus;5.0%</span></div>
+  <div class="eq-row"><span>&minus;20%</span><span>&minus;4.0%</span></div>
+  <div class="eq-row"><span>&minus;15%</span><span>&minus;3.0%</span></div>
+  <div class="eq-row"><span>&minus;10%</span><span>&minus;2.0%</span></div>
+  <div class="eq-row"><span>&minus;5%</span><span>&minus;1.0%</span></div>
+  <div class="eq-row"><span>0%</span><span>0%</span></div>
+  <div class="eq-row"><span>+5%</span><span>+1.0%</span></div>
+  <div class="eq-row"><span>+10%</span><span>+2.0%</span></div>
+  <div class="eq-row"><span>+15%</span><span>+3.0%</span></div>
+  <div class="eq-row"><span>+20%</span><span>+4.0%</span></div>
+  <div class="eq-row"><span>+25%</span><span>+5.0%</span></div>
+  <div class="eq-row"><span>+30%</span><span>+6.0%</span></div>
+</div>
 
-<h2>Position Size: 25%</h2>
-<p>Quarter of capital. &minus;30% = &minus;7.5% ROC, +30% = +7.5% ROC. One bad trade here can wipe weeks of work. Only viable with strict risk discipline.</p>
+<h2>Position Size: 25% &mdash; ROC = 1/4 &times; Return</h2>
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Trade Return</span><span>ROC (Account Impact)</span></div>
+  <div class="eq-row"><span>&minus;30%</span><span>&minus;7.5%</span></div>
+  <div class="eq-row"><span>&minus;25%</span><span>&minus;6.25%</span></div>
+  <div class="eq-row"><span>&minus;20%</span><span>&minus;5.0%</span></div>
+  <div class="eq-row"><span>&minus;15%</span><span>&minus;3.75%</span></div>
+  <div class="eq-row"><span>&minus;10%</span><span>&minus;2.5%</span></div>
+  <div class="eq-row"><span>&minus;5%</span><span>&minus;1.25%</span></div>
+  <div class="eq-row"><span>0%</span><span>0%</span></div>
+  <div class="eq-row"><span>+5%</span><span>+1.25%</span></div>
+  <div class="eq-row"><span>+10%</span><span>+2.5%</span></div>
+  <div class="eq-row"><span>+15%</span><span>+3.75%</span></div>
+  <div class="eq-row"><span>+20%</span><span>+5.0%</span></div>
+  <div class="eq-row"><span>+25%</span><span>+6.25%</span></div>
+  <div class="eq-row"><span>+30%</span><span>+7.5%</span></div>
+</div>
 
-<h2>Position Size: 40%</h2>
-<p>At 2/5ths of capital: &minus;30% = &minus;12% ROC, +30% = +12% ROC. This is Kelly-territory. If you're wrong at this size, you feel it for months.</p>
+<h2>Position Size: 40% &mdash; ROC = 2/5 &times; Return</h2>
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Trade Return</span><span>ROC (Account Impact)</span></div>
+  <div class="eq-row"><span>&minus;30%</span><span>&minus;12.0%</span></div>
+  <div class="eq-row"><span>&minus;25%</span><span>&minus;10.0%</span></div>
+  <div class="eq-row"><span>&minus;20%</span><span>&minus;8.0%</span></div>
+  <div class="eq-row"><span>&minus;15%</span><span>&minus;6.0%</span></div>
+  <div class="eq-row"><span>&minus;10%</span><span>&minus;4.0%</span></div>
+  <div class="eq-row"><span>&minus;5%</span><span>&minus;2.0%</span></div>
+  <div class="eq-row"><span>0%</span><span>0%</span></div>
+  <div class="eq-row"><span>+5%</span><span>+2.0%</span></div>
+  <div class="eq-row"><span>+10%</span><span>+4.0%</span></div>
+  <div class="eq-row"><span>+15%</span><span>+6.0%</span></div>
+  <div class="eq-row"><span>+20%</span><span>+8.0%</span></div>
+  <div class="eq-row"><span>+25%</span><span>+10.0%</span></div>
+  <div class="eq-row"><span>+30%</span><span>+12.0%</span></div>
+</div>
 
 <h2>The Takeaway</h2>
-<p>Most retail traders never think about ROC. They see a stock up 25% and feel like they made 25%. They didn't. They made 25% of whatever fraction they invested. Position sizing isn't just a risk tool — it's the mechanism that translates market moves into actual portfolio results.</p>`},
+<p>Most retail traders never think about ROC. They see a stock up 25% and feel like they made 25%. They didn't — they made 25% of whatever fraction they invested. Position sizing isn't just a risk tool. It's the exact mechanism that translates market moves into actual portfolio results. Control the size, and you control the outcome.</p>`},
 
   {id:"trillions",tag:"Compounding",read:"5 min",date:"Apr 20, 2025",
    title:"How to Make Trillions: Turn ₹1 Lakh into ₹100 Trillion",
@@ -545,15 +833,13 @@ const POSTS=[
 
 <p>Focus on staying in the game and protecting capital. The trader who avoids catastrophic losses will always outlast the one swinging for astronomical returns. Compounding rewards consistency, not bravado.</p>`},
 
-  {id:"compounding-weekly",tag:"Compounding",read:"5 min",date:"Apr 12, 2025",
-   title:"The Power of Compounding: Weekly Returns Needed for 50%–2000% Yearly",
+  {id:"compounding-weekly",tag:"Compounding",read:"6 min",date:"Apr 12, 2025",
+   title:"The Power of Compounding [W]: Weekly Returns Needed for 50%–2000% Yearly",
    excerpt:"Want 100% annual returns? You only need 1.34% per week, compounded. Here's the full table from 50% to 2000% per year.",
    body:`<p>Compounding is the most underrated force in trading. When returns compound weekly, the required weekly rate to hit a given annual target is much smaller than most people expect.</p>
-
 <blockquote><p>Formula: Weekly rate (%) = [(1 + Annual/100)<sup>1/52</sup> &minus; 1] &times; 100</p></blockquote>
 
-<h2>The Full Table</h2>
-
+<h2>The Complete Table — 50% to 2000% Annual</h2>
 <div class="eq-table">
   <div class="eq-row eq-header"><span>Annual Target</span><span>Weekly Rate Needed</span></div>
   <div class="eq-row"><span>50%</span><span>0.78% / week</span></div>
@@ -562,30 +848,44 @@ const POSTS=[
   <div class="eq-row"><span>200%</span><span>2.14% / week</span></div>
   <div class="eq-row"><span>250%</span><span>2.44% / week</span></div>
   <div class="eq-row"><span>300%</span><span>2.70% / week</span></div>
+  <div class="eq-row"><span>350%</span><span>2.93% / week</span></div>
   <div class="eq-row"><span>400%</span><span>3.14% / week</span></div>
+  <div class="eq-row"><span>450%</span><span>3.33% / week</span></div>
   <div class="eq-row"><span>500%</span><span>3.51% / week</span></div>
+  <div class="eq-row"><span>550%</span><span>3.67% / week</span></div>
+  <div class="eq-row"><span>600%</span><span>3.81% / week</span></div>
+  <div class="eq-row"><span>650%</span><span>3.95% / week</span></div>
   <div class="eq-row"><span>700%</span><span>4.08% / week</span></div>
+  <div class="eq-row"><span>750%</span><span>4.20% / week</span></div>
+  <div class="eq-row"><span>800%</span><span>4.32% / week</span></div>
+  <div class="eq-row"><span>850%</span><span>4.42% / week</span></div>
+  <div class="eq-row"><span>900%</span><span>4.53% / week</span></div>
+  <div class="eq-row"><span>950%</span><span>4.63% / week</span></div>
   <div class="eq-row"><span>1000% (10x)</span><span>4.72% / week</span></div>
+  <div class="eq-row"><span>1100%</span><span>4.89% / week</span></div>
+  <div class="eq-row"><span>1200%</span><span>5.06% / week</span></div>
+  <div class="eq-row"><span>1300%</span><span>5.21% / week</span></div>
+  <div class="eq-row"><span>1400%</span><span>5.35% / week</span></div>
   <div class="eq-row"><span>1500%</span><span>5.48% / week</span></div>
+  <div class="eq-row"><span>1600%</span><span>5.60% / week</span></div>
+  <div class="eq-row"><span>1700%</span><span>5.72% / week</span></div>
+  <div class="eq-row"><span>1800%</span><span>5.83% / week</span></div>
+  <div class="eq-row"><span>1900%</span><span>5.93% / week</span></div>
   <div class="eq-row"><span>2000% (21x)</span><span>6.03% / week</span></div>
 </div>
 
-<h2>What This Means in Practice</h2>
+<h2>The Big Takeaway</h2>
 <p>Just <strong>1.34% every week</strong> compounds to 100% annually. That sounds tiny — but sustaining it week after week without a significant drawdown is the challenge. The math is simple. The execution is everything.</p>
-
-<p>Notice how the weekly rate doesn't scale linearly with the annual target. Going from 50% to 2000% annual (40x the target) only requires going from 0.78% to 6.03% weekly — less than 8x the weekly rate. Compounding does the heavy lifting; your job is consistency.</p>
-
+<p>Notice how the weekly rate doesn't scale linearly. Going from 50% to 2000% annual (a 40x increase in target) only requires going from 0.78% to 6.03% weekly — less than an 8x increase in weekly effort. Compounding does the heavy lifting. Your job is to show up consistently.</p>
 <blockquote><p>Dream big, but stay realistic. Compounding rewards you for showing up every week, not for swinging for the fences.</p></blockquote>`},
 
-  {id:"compounding-monthly",tag:"Compounding",read:"5 min",date:"Apr 5, 2025",
-   title:"The Power of Compounding: Monthly Returns Needed for 50%–2000% Yearly",
+  {id:"compounding-monthly",tag:"Compounding",read:"6 min",date:"Apr 5, 2025",
+   title:"The Power of Compounding [M]: Monthly Returns Needed for 50%–2000% Yearly",
    excerpt:"Just 5.95% every month compounds to 100% annually. Here's the complete monthly compounding table from 50% to 2000% per year.",
    body:`<p>Monthly compounding is more intuitive for most traders — we review performance monthly, think in monthly targets, and measure progress month by month. Here's exactly what monthly return you need to hit each annual milestone.</p>
-
 <blockquote><p>Formula: Monthly rate (%) = [(1 + Annual/100)<sup>1/12</sup> &minus; 1] &times; 100</p></blockquote>
 
-<h2>The Full Table</h2>
-
+<h2>The Complete Table — 50% to 2000% Annual</h2>
 <div class="eq-table">
   <div class="eq-row eq-header"><span>Annual Target</span><span>Monthly Rate Needed</span></div>
   <div class="eq-row"><span>50%</span><span>3.44% / month</span></div>
@@ -594,19 +894,35 @@ const POSTS=[
   <div class="eq-row"><span>200%</span><span>9.59% / month</span></div>
   <div class="eq-row"><span>250%</span><span>11.00% / month</span></div>
   <div class="eq-row"><span>300%</span><span>12.25% / month</span></div>
+  <div class="eq-row"><span>350%</span><span>13.35% / month</span></div>
   <div class="eq-row"><span>400%</span><span>14.35% / month</span></div>
+  <div class="eq-row"><span>450%</span><span>15.26% / month</span></div>
   <div class="eq-row"><span>500%</span><span>16.10% / month</span></div>
+  <div class="eq-row"><span>550%</span><span>16.88% / month</span></div>
+  <div class="eq-row"><span>600%</span><span>17.60% / month</span></div>
+  <div class="eq-row"><span>650%</span><span>18.28% / month</span></div>
   <div class="eq-row"><span>700%</span><span>18.92% / month</span></div>
+  <div class="eq-row"><span>750%</span><span>19.52% / month</span></div>
+  <div class="eq-row"><span>800%</span><span>20.09% / month</span></div>
+  <div class="eq-row"><span>850%</span><span>20.64% / month</span></div>
+  <div class="eq-row"><span>900%</span><span>21.15% / month</span></div>
+  <div class="eq-row"><span>950%</span><span>21.65% / month</span></div>
   <div class="eq-row"><span>1000% (10x)</span><span>22.12% / month</span></div>
+  <div class="eq-row"><span>1100%</span><span>23.01% / month</span></div>
+  <div class="eq-row"><span>1200%</span><span>23.83% / month</span></div>
+  <div class="eq-row"><span>1300%</span><span>24.60% / month</span></div>
+  <div class="eq-row"><span>1400%</span><span>25.32% / month</span></div>
   <div class="eq-row"><span>1500%</span><span>25.99% / month</span></div>
+  <div class="eq-row"><span>1600%</span><span>26.63% / month</span></div>
+  <div class="eq-row"><span>1700%</span><span>27.23% / month</span></div>
+  <div class="eq-row"><span>1800%</span><span>27.81% / month</span></div>
+  <div class="eq-row"><span>1900%</span><span>28.36% / month</span></div>
   <div class="eq-row"><span>2000% (21x)</span><span>28.88% / month</span></div>
 </div>
 
-<h2>What This Means in Practice</h2>
-<p>Just <strong>5.95% every month</strong> compounds to doubling your money in a year. That's one good trade a month at a modest position size, consistently, with no major blowups. Not glamorous — but powerful.</p>
-
-<p>Notice the pattern: going from 50% to 2000% annual requires going from 3.44% to 28.88% monthly — roughly an 8x increase in monthly effort for a 40x increase in annual result. Again, compounding is doing the work.</p>
-
+<h2>The Big Takeaway</h2>
+<p>Just <strong>5.95% every month</strong> compounds to doubling your money in a year. That's one good trade a month at a reasonable position size, consistently, with no major blowups. Not glamorous — but compounding makes it powerful over time.</p>
+<p>Notice the pattern: going from 50% to 2000% annual (40x the target) only requires going from 3.44% to 28.88% monthly — roughly an 8x increase in monthly effort. Compounding is doing the real work. Your job is consistency and capital preservation.</p>
 <blockquote><p>Dream big, but stay realistic. The monthly rate required for 100% annual returns is achievable. Sustaining it for years without a catastrophic loss — that's the real challenge.</p></blockquote>`}
 ];
 
