@@ -265,6 +265,10 @@ canvas{display:block;width:100%!important;height:auto;}
 .book-info h4{font-family:var(--serif);font-size:0.88rem;font-weight:700;margin-bottom:0.16rem;}
 .book-info span{font-family:var(--mono);font-size:0.61rem;color:var(--muted);}
 .book-info p{font-size:0.76rem;color:var(--muted);margin-top:0.32rem;line-height:1.6;}
+.book-category{margin-bottom:2.8rem;}
+.book-cat-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:0.85rem;padding-bottom:0.62rem;border-bottom:1px solid var(--border);}
+.book-cat-label{font-family:var(--serif);font-size:1.08rem;font-weight:700;}
+.book-cat-src{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.1em;color:rgba(200,164,85,0.6);text-transform:uppercase;}
 
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
@@ -303,6 +307,16 @@ textarea.f-input{resize:vertical;min-height:105px;}
 .post-content ul{padding-left:1.25rem;margin-bottom:1.25rem;}
 .post-content ul li{margin-bottom:0.32rem;line-height:1.8;}
 .post-divider{border:none;border-top:1px solid var(--border);margin:2.3rem 0;}
+
+/* Equation / data tables inside posts */
+.eq-table{border:1px solid var(--border);margin:1.5rem 0;font-family:var(--mono);font-size:0.78rem;}
+.eq-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border);}
+.eq-row:last-child{border-bottom:none;}
+.eq-row span{padding:0.5rem 0.9rem;line-height:1.6;}
+.eq-row span:first-child{border-right:1px solid var(--border);color:var(--muted);}
+.eq-row span:last-child{color:var(--ink);font-weight:500;}
+.eq-header{background:var(--cream);}
+.eq-header span{font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)!important;font-weight:400!important;}
 
 .btn-p{display:inline-block;padding:0.7rem 1.6rem;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;border:none;transition:background 0.2s;text-decoration:none;}
 .btn-p:hover{background:var(--gold);color:var(--ink);}
@@ -429,7 +443,171 @@ const POSTS=[
   {id:"annual2024",tag:"Annual Letter",read:"18 min",date:"Jan 7, 2025",
    title:"2024 Year in Review: What Worked, What Didn't, and What I'm Changing",
    excerpt:"My honest accounting of the year &mdash; the good trades, the costly mistakes, the psychological patterns I noticed.",
-   body:`<p>Every January I sit down and write an honest post-mortem of the previous year. This year I'm sharing it publicly because the lessons were hard-won.</p><h2>The Numbers</h2><p>2024 was a strong year for momentum strategies overall. But most gains came from four trades. The other 60-odd trades were roughly break-even.</p><h2>What Worked</h2><p>Holding winners longer. In 2023 I had a habit of taking profits at 2&ndash;3R. In 2024 I used a trailing stop instead. Two trades went to 8R and 11R respectively.</p><blockquote><p>The most important skill isn't finding good setups. It's knowing when the environment doesn't support your strategy &mdash; and doing nothing.</p></blockquote><h2>What I'm Changing in 2025</h2><p>I'm adding a formal &ldquo;market regime&rdquo; filter. Before I take any new positions, I'll check whether the number of stocks making 52-week highs is expanding or contracting. If contracting, I cut maximum positions by half.</p>`}
+   body:`<p>Every January I sit down and write an honest post-mortem of the previous year. This year I'm sharing it publicly because the lessons were hard-won.</p><h2>The Numbers</h2><p>2024 was a strong year for momentum strategies overall. But most gains came from four trades. The other 60-odd trades were roughly break-even.</p><h2>What Worked</h2><p>Holding winners longer. In 2023 I had a habit of taking profits at 2&ndash;3R. In 2024 I used a trailing stop instead. Two trades went to 8R and 11R respectively.</p><blockquote><p>The most important skill isn't finding good setups. It's knowing when the environment doesn't support your strategy &mdash; and doing nothing.</p></blockquote><h2>What I'm Changing in 2025</h2><p>I'm adding a formal &ldquo;market regime&rdquo; filter. Before I take any new positions, I'll check whether the number of stocks making 52-week highs is expanding or contracting. If contracting, I cut maximum positions by half.</p>`},
+
+  {id:"traders-equation",tag:"Risk Management",read:"7 min",date:"May 10, 2025",
+   title:"The Trader's Equation: Win Rate, Risk-Reward, and Expectancy",
+   excerpt:"Your outcome in trading is not decided by win rate alone. Even a 10% win rate can be profitable — if your risk-reward is right.",
+   body:`<p>Most traders obsess over win rate. They want to be right. But being right most of the time has nothing to do with being profitable. What actually determines your outcome is <strong>expectancy</strong> — the combination of win rate and risk-reward ratio over a series of trades.</p>
+
+<blockquote><p>Expectancy = (Win Rate &times; Avg Win) &minus; (Loss Rate &times; Avg Loss)</p></blockquote>
+
+<p>To make this concrete, let's assume 100 trades and 1 unit of risk per trade. Here's what the math shows across different win rates.</p>
+
+<h2>Win Rate: 10% &mdash; Breakeven at 1:9</h2>
+<p>With only 10 winners out of 100 trades and 90 losses, you need a risk-reward of at least <strong>1:9</strong> to break even. At 1:10 you're already +10 units. At 1:20, +110 units. Low probability, but high payoff — the sniper approach.</p>
+
+<h2>Win Rate: 20% &mdash; Breakeven at 1:4</h2>
+<p>With 20 wins and 80 losses: 1:1 is &minus;60, 1:4 is breakeven at 0, and every additional unit of reward adds +20. At 1:10 you're at +120.</p>
+
+<h2>Win Rate: 30% &mdash; Breakeven at ~1:2.33</h2>
+<p>30 wins, 70 losses: 1:1 gives &minus;40, 1:3 gives +20. At 1:10 you're at +230. Most momentum traders operate around this zone.</p>
+
+<h2>Win Rate: 40% &mdash; Breakeven at 1:1.5</h2>
+<p>40 wins, 60 losses: even a 1:2 reward gives you +20. At 1:10 you're at +340. This is where a good system with moderate selectivity lands.</p>
+
+<h2>Win Rate: 50% &mdash; Breakeven at 1:1</h2>
+<p>50/50. If you win as often as you lose, even a 1:1 reward breaks even. Every incremental improvement in reward directly adds profit. At 1:10 you're at +450.</p>
+
+<h2>The Clean Pattern</h2>
+<p>Lower win rate requires bigger rewards to survive. Higher win rate gives you more flexibility on reward. The table below summarises the breakeven points:</p>
+
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Win Rate</span><span>Breakeven R:R</span></div>
+  <div class="eq-row"><span>10%</span><span>1:9</span></div>
+  <div class="eq-row"><span>15%</span><span>~1:5.67</span></div>
+  <div class="eq-row"><span>20%</span><span>1:4</span></div>
+  <div class="eq-row"><span>25%</span><span>1:3</span></div>
+  <div class="eq-row"><span>30%</span><span>~1:2.33</span></div>
+  <div class="eq-row"><span>35%</span><span>~1:1.86</span></div>
+  <div class="eq-row"><span>40%</span><span>1:1.5</span></div>
+  <div class="eq-row"><span>45%</span><span>~1:1.22</span></div>
+  <div class="eq-row"><span>50%</span><span>1:1</span></div>
+</div>
+
+<p>Once you understand this, you stop chasing a higher win rate and start managing your risk-reward. A 30% win rate with 1:3 reward is the same as a 50% win rate with 1:1 — except the 30% system is far easier to achieve in real markets.</p>`},
+
+  {id:"roc",tag:"Risk Management",read:"6 min",date:"May 3, 2025",
+   title:"How to Calculate Return on Capital (ROC)",
+   excerpt:"ROC shows what a trade actually does to your total account — not just the trade itself. Position size is the bridge.",
+   body:`<p>When a stock moves 20%, that's not your return. That's the trade's return. Your actual return on capital depends on how much of your total account you deployed. This is Return on Capital (ROC) — and understanding it is central to sensible position sizing.</p>
+
+<blockquote><p>ROC = Position Size (as a fraction) &times; Trade Return (%)</p></blockquote>
+
+<p>A large loss in a trade only becomes a large loss in your account if your position size is large. The two levers are always: how much you deploy, and how much the trade moves.</p>
+
+<h2>Position Size: 5%</h2>
+<p>At 1/20th of your capital, every 10% move in the stock = 0.5% move in your account. A &minus;30% trade = &minus;1.5% ROC. A +30% trade = +1.5% ROC. Tight and controlled.</p>
+
+<h2>Position Size: 10%</h2>
+<p>Doubling to 1/10th doubles the impact. &minus;30% trade = &minus;3% ROC. +30% = +3% ROC. Still manageable, but you feel the winners and losers more.</p>
+
+<h2>Position Size: 20%</h2>
+<p>At 1/5th of capital: &minus;30% = &minus;6% ROC, +30% = +6% ROC. A concentrated position. Used by high-conviction traders with tight stops.</p>
+
+<h2>Position Size: 25%</h2>
+<p>Quarter of capital. &minus;30% = &minus;7.5% ROC, +30% = +7.5% ROC. One bad trade here can wipe weeks of work. Only viable with strict risk discipline.</p>
+
+<h2>Position Size: 40%</h2>
+<p>At 2/5ths of capital: &minus;30% = &minus;12% ROC, +30% = +12% ROC. This is Kelly-territory. If you're wrong at this size, you feel it for months.</p>
+
+<h2>The Takeaway</h2>
+<p>Most retail traders never think about ROC. They see a stock up 25% and feel like they made 25%. They didn't. They made 25% of whatever fraction they invested. Position sizing isn't just a risk tool — it's the mechanism that translates market moves into actual portfolio results.</p>`},
+
+  {id:"trillions",tag:"Compounding",read:"5 min",date:"Apr 20, 2025",
+   title:"How to Make Trillions: Turn ₹1 Lakh into ₹100 Trillion",
+   excerpt:"Starting with ₹1 lakh and growing at 100% CAGR every year — here's how long it takes to reach each wealth milestone.",
+   body:`<p>This is a thought experiment, not a plan. But the math is real and worth understanding — because it reveals just how powerful (and unrealistic) compounding at extreme rates looks.</p>
+
+<p>Starting capital: ₹1,00,000. Target growth rate: 100% CAGR — doubling your money every single year.</p>
+
+<h2>The Timeline</h2>
+
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Milestone</span><span>Time Required</span></div>
+  <div class="eq-row"><span>₹1 Million</span><span>3.3 years</span></div>
+  <div class="eq-row"><span>₹10 Million</span><span>6.6 years</span></div>
+  <div class="eq-row"><span>₹100 Million</span><span>10.0 years</span></div>
+  <div class="eq-row"><span>₹1 Billion</span><span>13.3 years</span></div>
+  <div class="eq-row"><span>₹10 Billion</span><span>16.6 years</span></div>
+  <div class="eq-row"><span>₹100 Billion</span><span>20.0 years</span></div>
+  <div class="eq-row"><span>₹1 Trillion</span><span>23.3 years</span></div>
+  <div class="eq-row"><span>₹10 Trillion</span><span>26.6 years</span></div>
+  <div class="eq-row"><span>₹100 Trillion</span><span>30.0 years</span></div>
+</div>
+
+<p>In theory, ₹1 lakh grows to ₹100 trillion in exactly 30 years at 100% CAGR. The math is unambiguous.</p>
+
+<h2>The Reality Check</h2>
+<p>Yes, the math works. But sustaining 100% returns every year for 20–30 years is essentially impossible in practice. Warren Buffett — arguably the greatest long-term investor in history — never came close to that sustained rate. Markets cycle. Volatility compounds. One deep drawdown can wipe out years of gains.</p>
+
+<blockquote><p>Easy in theory. The goal isn't 100% CAGR — it's consistent, survivable growth over decades.</p></blockquote>
+
+<p>Focus on staying in the game and protecting capital. The trader who avoids catastrophic losses will always outlast the one swinging for astronomical returns. Compounding rewards consistency, not bravado.</p>`},
+
+  {id:"compounding-weekly",tag:"Compounding",read:"5 min",date:"Apr 12, 2025",
+   title:"The Power of Compounding: Weekly Returns Needed for 50%–2000% Yearly",
+   excerpt:"Want 100% annual returns? You only need 1.34% per week, compounded. Here's the full table from 50% to 2000% per year.",
+   body:`<p>Compounding is the most underrated force in trading. When returns compound weekly, the required weekly rate to hit a given annual target is much smaller than most people expect.</p>
+
+<blockquote><p>Formula: Weekly rate (%) = [(1 + Annual/100)<sup>1/52</sup> &minus; 1] &times; 100</p></blockquote>
+
+<h2>The Full Table</h2>
+
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Annual Target</span><span>Weekly Rate Needed</span></div>
+  <div class="eq-row"><span>50%</span><span>0.78% / week</span></div>
+  <div class="eq-row"><span>100%</span><span>1.34% / week</span></div>
+  <div class="eq-row"><span>150%</span><span>1.78% / week</span></div>
+  <div class="eq-row"><span>200%</span><span>2.14% / week</span></div>
+  <div class="eq-row"><span>250%</span><span>2.44% / week</span></div>
+  <div class="eq-row"><span>300%</span><span>2.70% / week</span></div>
+  <div class="eq-row"><span>400%</span><span>3.14% / week</span></div>
+  <div class="eq-row"><span>500%</span><span>3.51% / week</span></div>
+  <div class="eq-row"><span>700%</span><span>4.08% / week</span></div>
+  <div class="eq-row"><span>1000% (10x)</span><span>4.72% / week</span></div>
+  <div class="eq-row"><span>1500%</span><span>5.48% / week</span></div>
+  <div class="eq-row"><span>2000% (21x)</span><span>6.03% / week</span></div>
+</div>
+
+<h2>What This Means in Practice</h2>
+<p>Just <strong>1.34% every week</strong> compounds to 100% annually. That sounds tiny — but sustaining it week after week without a significant drawdown is the challenge. The math is simple. The execution is everything.</p>
+
+<p>Notice how the weekly rate doesn't scale linearly with the annual target. Going from 50% to 2000% annual (40x the target) only requires going from 0.78% to 6.03% weekly — less than 8x the weekly rate. Compounding does the heavy lifting; your job is consistency.</p>
+
+<blockquote><p>Dream big, but stay realistic. Compounding rewards you for showing up every week, not for swinging for the fences.</p></blockquote>`},
+
+  {id:"compounding-monthly",tag:"Compounding",read:"5 min",date:"Apr 5, 2025",
+   title:"The Power of Compounding: Monthly Returns Needed for 50%–2000% Yearly",
+   excerpt:"Just 5.95% every month compounds to 100% annually. Here's the complete monthly compounding table from 50% to 2000% per year.",
+   body:`<p>Monthly compounding is more intuitive for most traders — we review performance monthly, think in monthly targets, and measure progress month by month. Here's exactly what monthly return you need to hit each annual milestone.</p>
+
+<blockquote><p>Formula: Monthly rate (%) = [(1 + Annual/100)<sup>1/12</sup> &minus; 1] &times; 100</p></blockquote>
+
+<h2>The Full Table</h2>
+
+<div class="eq-table">
+  <div class="eq-row eq-header"><span>Annual Target</span><span>Monthly Rate Needed</span></div>
+  <div class="eq-row"><span>50%</span><span>3.44% / month</span></div>
+  <div class="eq-row"><span>100%</span><span>5.95% / month</span></div>
+  <div class="eq-row"><span>150%</span><span>7.93% / month</span></div>
+  <div class="eq-row"><span>200%</span><span>9.59% / month</span></div>
+  <div class="eq-row"><span>250%</span><span>11.00% / month</span></div>
+  <div class="eq-row"><span>300%</span><span>12.25% / month</span></div>
+  <div class="eq-row"><span>400%</span><span>14.35% / month</span></div>
+  <div class="eq-row"><span>500%</span><span>16.10% / month</span></div>
+  <div class="eq-row"><span>700%</span><span>18.92% / month</span></div>
+  <div class="eq-row"><span>1000% (10x)</span><span>22.12% / month</span></div>
+  <div class="eq-row"><span>1500%</span><span>25.99% / month</span></div>
+  <div class="eq-row"><span>2000% (21x)</span><span>28.88% / month</span></div>
+</div>
+
+<h2>What This Means in Practice</h2>
+<p>Just <strong>5.95% every month</strong> compounds to doubling your money in a year. That's one good trade a month at a modest position size, consistently, with no major blowups. Not glamorous — but powerful.</p>
+
+<p>Notice the pattern: going from 50% to 2000% annual requires going from 3.44% to 28.88% monthly — roughly an 8x increase in monthly effort for a 40x increase in annual result. Again, compounding is doing the work.</p>
+
+<blockquote><p>Dream big, but stay realistic. The monthly rate required for 100% annual returns is achievable. Sustaining it for years without a catastrophic loss — that's the real challenge.</p></blockquote>`}
 ];
 
 let curFilter="All";
@@ -656,7 +834,159 @@ function renderPost(id){
 }
 
 function renderResources(){
-  const books=[["How to Make Money in Stocks","William O'Neil","The book that introduced me to CANSLIM and changed how I think about stock selection."],["Reminiscences of a Stock Operator","Edwin Lef&egrave;vre","Still the best book ever written on the psychology of speculation."],["The Art of Execution","Lee Freeman-Shor","Data-driven research on why most investors underperform even when picks are right."],["Trading in the Zone","Mark Douglas","The definitive book on trading psychology."],["Market Wizards","Jack Schwager","Interviews with the best traders of the 20th century."],["One Good Trade","Mike Bellafiore","The best book on day trading process and what separates professionals from amateurs."]];
+  const bookSections=[
+    {
+      label:"Jesse Livermore",
+      books:[
+        ["Reminiscences of a Stock Operator","Edwin Lef&egrave;vre","Still the best book ever written on the psychology of speculation. Livermore's story told through a journalist's pen."],
+        ["How to Trade in Stocks","Jesse Livermore","Livermore's own words on timing, pyramiding, and the principles that made him a legend."]
+      ]
+    },
+    {
+      label:"Mark Douglas",
+      books:[
+        ["Trading in the Zone","Mark Douglas","The definitive book on trading psychology. Probability thinking and consistency over prediction."],
+        ["The Disciplined Trader","Mark Douglas","Douglas's first book — lays the psychological groundwork for developing a winning mindset."]
+      ]
+    },
+    {
+      label:"Jack D. Schwager — Market Wizards",
+      books:[
+        ["Market Wizards (1989)","Jack D. Schwager","Interviews with the best traders of the 20th century. Every page contains a lesson."],
+        ["The New Market Wizards (1992)","Jack D. Schwager","A second round of masterclass interviews covering entirely new traders and strategies."],
+        ["Stock Market Wizards (2001)","Jack D. Schwager","Focused on equity traders — the strategies and mindset behind outsized stock market returns."],
+        ["Hedge Fund Market Wizards (2012)","Jack D. Schwager","Inside the minds of elite hedge fund managers. Risk management is the recurring theme."],
+        ["Unknown Market Wizards (2020)","Jack D. Schwager","Retail and independent traders who quietly built exceptional track records."],
+        ["The Little Book of Market Wizards (2014)","Jack D. Schwager","Distilled lessons from the full Wizards series. Perfect entry point or refresher."]
+      ]
+    },
+    {
+      label:"Jack D. Schwager — Schwager on Futures",
+      books:[
+        ["Fundamental Analysis (1995)","Jack D. Schwager","Deep dive into futures markets through the lens of fundamental analysis."],
+        ["Technical Analysis (1996)","Jack D. Schwager","One of the most comprehensive technical analysis references written — futures focused but broadly applicable."],
+        ["Managed Trading (1996)","Jack D. Schwager","The mechanics and performance metrics behind managed futures and systematic strategies."],
+        ["A Complete Guide to the Futures Markets (1984)","Jack D. Schwager","The original comprehensive futures reference — foundational for anyone trading commodities."],
+        ["Getting Started in Technical Analysis (1999)","Jack D. Schwager","An accessible introduction to chart reading and technical methodology."],
+        ["Market Sense and Nonsense (2012)","Jack D. Schwager","Dismantles common investment myths with data. Sharp and skeptical thinking throughout."]
+      ]
+    },
+    {
+      label:"Mark Minervini",
+      books:[
+        ["Trade Like a Stock Market Wizard","Mark Minervini","SEPA methodology explained in full — the framework behind Minervini's US Investing Championship wins."],
+        ["Think &amp; Trade Like a Champion","Mark Minervini","The mental and process disciplines required to sustain high-level performance in markets."],
+        ["Momentum Masters","Minervini, Ryan, Zanger &amp; Ritchie II","Four elite momentum traders in round-table conversation. Tactical and philosophical gold."],
+        ["Mindset Secrets for Winning","Mark Minervini","The psychological edge — conviction, resilience, and the internal game of high performance."]
+      ]
+    },
+    {
+      label:"Al Brooks",
+      books:[
+        ["Reading Price Charts Bar by Bar","Al Brooks","The foundational text for pure price action analysis. Dense, thorough, essential."],
+        ["Trading Price Action Trends","Al Brooks","Everything about identifying, entering, and riding trends using price action alone."],
+        ["Trading Price Action Trading Ranges","Al Brooks","The flip side — reading and trading sideways markets where most traders get chopped."],
+        ["Trading Price Action Reversals","Al Brooks","Recognizing genuine reversals vs. traps. Critical for both entries and protecting open profits."]
+      ]
+    },
+    {
+      label:"William J. O'Neil",
+      books:[
+        ["How to Make Money in Stocks","William J. O'Neil","The book that introduced CANSLIM to the world. The starting point for every growth trader."],
+        ["24 Essential Lessons for Investment Success","William J. O'Neil","Compact and actionable — O'Neil's core principles distilled into daily study lessons."],
+        ["The Successful Investor","William J. O'Neil","Guidance on navigating different market conditions — when to buy, when to sell, when to wait."],
+        ["How to Make Money Selling Stocks Short","William J. O'Neil","Applying the CANSLIM lens in reverse — identifying failed leaders and shorting them profitably."]
+      ]
+    },
+    {
+      label:"Oliver Kell's Recommended List",
+      src:"kelltrading.com",
+      books:[
+        ["Reminiscences of a Stock Operator","Edwin Lef&egrave;vre",""],
+        ["How to Trade in Stocks","Jesse Livermore",""],
+        ["How to Make Money in Stocks","William O'Neil",""],
+        ["Trade Like a Stock Market Wizard","Mark Minervini",""],
+        ["Think &amp; Trade Like a Champion","Mark Minervini",""],
+        ["Trade Like an O'Neil Disciple","Gil Morales &amp; Chris Kacher","How two O'Neil veterans adapted and applied the methodology to their own trading."],
+        ["Japanese Candlestick Charting Techniques","Steve Nison","The Western standard reference for candlestick analysis. Nison introduced the methodology to global traders."],
+        ["Technical Analysis Using Multiple Timeframes","Brian Shannon","A masterclass in using HTF context to inform LTF entries. Highly practical."],
+        ["Secrets for Profiting in Bull and Bear Markets","Stan Weinstein","Stage analysis — one of the clearest frameworks for identifying where a stock is in its cycle."],
+        ["One Up on Wall Street","Peter Lynch","Lynch's commonsense approach to finding growth stocks before institutions pile in."],
+        ["Market Wizards","Jack Schwager",""],
+        ["The New Market Wizards","Jack Schwager",""],
+        ["Stock Market Wizards","Jack Schwager",""],
+        ["Hedge Fund Market Wizards","Jack Schwager",""],
+        ["Unknown Market Wizards","Jack Schwager",""]
+      ]
+    },
+    {
+      label:"Kristjan Kullamaegi's Recommended List",
+      src:"qullamaggie.com",
+      books:[
+        ["How I Made $2,000,000 in the Stock Market","Nicolas Darvas","The Darvas Box system — momentum and trend following from a dancer who became a millionaire trader."],
+        ["Reminiscences of a Stock Operator","Edwin Lef&egrave;vre",""],
+        ["How to Make Money in Stocks","William O'Neil",""],
+        ["Market Wizards Series","Jack Schwager",""],
+        ["Trade Like a Stock Market Wizard &amp; Think &amp; Trade Like a Champion","Mark Minervini",""]
+      ]
+    },
+    {
+      label:"Dan Zanger's Recommended List",
+      src:"chartpattern.com",
+      books:[
+        ["Momentum Masters","Mark Minervini",""],
+        ["How to Make Money in Stocks","William O'Neil",""],
+        ["Reminiscences of a Stock Operator","Edwin Lef&egrave;vre",""],
+        ["How Technical Analysis Works","Bruce M. Kamich","A clear, accessible introduction to applying technical analysis in real markets."],
+        ["How I Made $2,000,000 in the Stock Market","Nicolas Darvas",""],
+        ["Japanese Candlestick Charting Techniques","Steve Nison",""],
+        ["Trading for a Living","Alexander Elder","Elder's three pillars: trading psychology, market analysis, and money management."],
+        ["Getting Started in Technical Analysis","Jack D. Schwager",""],
+        ["Encyclopedia of Chart Patterns","Thomas N. Bulkowski","The most data-driven reference on chart patterns — each pattern quantified by historical performance."]
+      ]
+    },
+    {
+      label:"Mark Minervini's Personal Reading List",
+      src:"x.com/markminervini",
+      books:[
+        ["Trade Like a Stock Market Wizard","Mark Minervini",""],
+        ["Think and Trade Like a Champion","Mark Minervini",""],
+        ["Mindset Secrets for Winning","Mark Minervini",""],
+        ["How to Trade in Stocks","Jesse Livermore",""],
+        ["Superperformance Stocks","Richard Love","A deep study of the market's biggest winners — the common characteristics that precede explosive moves."],
+        ["How Charts Can Help You in the Market","William Jiler","An early and influential work on chart reading from one of the pioneers of technical analysis."],
+        ["How I Made $2,000,000 in the Stock Market","Nicolas Darvas",""],
+        ["Momentum Masters","Bob Weissman",""]
+      ]
+    },
+    {
+      label:"Also Recommended",
+      books:[
+        ["The 5 Secrets to Highly Profitable Swing Trading","Ivaylo Ivanov","Tactical swing trading from a practitioner who documented every setup rigorously."],
+        ["Top 10 Trading Setups","Ivaylo Ivanov","A focused breakdown of the highest-probability repeating patterns in momentum stocks."],
+        ["Trade Like an O'Neil Disciple","Gil Morales &amp; Chris Kacher",""],
+        ["Secrets for Profiting in Bull and Bear Markets","Stan Weinstein",""],
+        ["The Perfect Speculator","Brad Koteshwar","Rules-based speculation from a disciplined trader. Clear and actionable."],
+        ["Trade Your Way to Financial Freedom","Van K. Tharp","Expectancy, R-multiples, and building a system that fits your psychology."],
+        ["The Rule","Larry Hite","The story and principles of one of the original Turtle traders turned hedge fund manager."],
+        ["The 1 Hour Trade","Brian P. Anderson","A practical approach to intraday momentum trading with a tight, repeatable process."]
+      ]
+    }
+  ];
+
+  function renderBookSections(sections){
+    return sections.map(sec=>{
+      const filtered=sec.books.filter(([t])=>t);
+      return `<div class="book-category reveal">
+        <div class="book-cat-header">
+          <span class="book-cat-label">${sec.label}</span>
+          ${sec.src?`<span class="book-cat-src">${sec.src}</span>`:""}
+        </div>
+        <div class="book-grid">${filtered.map(([t,a,n],i)=>`<div class="book-item"><span class="book-n">${String(i+1).padStart(2,"0")}</span><div class="book-info"><h4>${t}</h4><span>${a}</span>${n?`<p>${n}</p>`:""}</div></div>`).join("")}</div>
+      </div>`;
+    }).join("");
+  }
+
   return `<div class="reveal"><div class="sec-eyebrow">Resources</div><h1 class="sec-title">Free tools for<br>serious traders</h1><p style="font-size:0.91rem;color:var(--muted);max-width:450px;line-height:1.75;margin-bottom:0.4rem;">Everything here is free, no email required.</p></div>
   <div class="chart-wrap reveal" style="margin:1.6rem 0;">
     <div class="chart-header"><div><div class="chart-ticker">Win Rate by Setup Type</div><div style="font-family:var(--mono);font-size:0.62rem;color:rgba(247,245,240,0.36);margin-top:0.12rem;">847 documented trades, 2015&ndash;2024</div></div></div>
@@ -670,7 +1000,7 @@ function renderResources(){
     <a href="#" class="res-card" onclick="return false;"><svg class="res-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="8" y="8" width="24" height="24" rx="2"/><path d="M14 20h4v-6M22 14v12M26 17v9"/></svg><div class="res-title">Annual Letters Archive</div><p class="res-body">All 10 of my annual year-in-review posts. Trade analysis, psychological lessons, market observations.</p><span class="res-link">Read the archive &rarr;</span></a>
     <a href="#" class="res-card" onclick="return false;"><svg class="res-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="14" r="6"/><path d="M8 34c0-6.627 5.373-12 12-12s12 5.373 12 12"/></svg><div class="res-title">Beginner's Roadmap</div><p class="res-body">If I were starting today, this is the path I'd take. A curated sequence of what to learn and in what order.</p><span class="res-link">Start here &rarr;</span></a>
   </div>
-  <div class="books-section reveal"><h2>Essential Reading</h2><div class="book-grid">${books.map(([t,a,n],i)=>`<div class="book-item"><span class="book-n">${String(i+1).padStart(2,"0")}</span><div class="book-info"><h4>${t}</h4><span>${a}</span><p>${n}</p></div></div>`).join("")}</div></div>`;
+  <div class="books-section reveal"><h2>Recommended Reading</h2><p style="font-size:0.84rem;color:var(--muted);margin-bottom:2.2rem;line-height:1.75;">Curated lists from the traders I respect most — Minervini, O'Neil, Kell, Kullamaegi, Zanger — plus books I've personally read and returned to.</p>${renderBookSections(bookSections)}</div>`;
 }
 
 function renderContact(){
